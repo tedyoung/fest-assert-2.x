@@ -1,4 +1,4 @@
-### Fest goal
+### Fest's Goal
 
 This project provides a fluent interface for assertions.
 
@@ -20,6 +20,10 @@ For more details please visit :
 
 ### Thanks
 
-Thanks to Cloudbees for their FOSS program that allows Fest to have a **[Jenkins CI server](https://fest.ci.cloudbees.com/#)** !
+Thanks to Cloudbees for their FOSS program that allows Fest to have a **[Jenkins CI server](https://fest.ci.cloudbees.com/#)**!
 
 ![cloudbees](/alexruiz/fest-assert-2.x/raw/master/src/site/resources/images/built-on-Dev@Cloud-Cloudbees.png)
+
+Travis CI:
+
+![travis](https://secure.travis-ci.org/tedyoung/fest-assert-2.x.png)
