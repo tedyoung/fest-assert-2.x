@@ -1,16 +1,20 @@
-### Fest goal
+[![Build Status](https://secure.travis-ci.org/tedyoung/fest-assert-2.x.png)](https://travis-ci.org/#!/tedyoung/fest-assert-2.x)
 
-This project provides a fluent interface for assertions.
+## What is FEST?
+
+This project provides a fluent interface for assertions in unit tests.
+
+### Fest's 2.x goal
 
 This is an attempt to improve our codebase from the previous 1.x releases in terms of extensibility, code reuse,
 and code organization. 
 
 ### Fest is easy to use
 
-FEST assertions are incredibly easy to write: just type **```assertThat```** followed the actual value and a dot, and any Java 
-IDE will show you all the assertions available for the type of the given object to verify. No more confusion about the 
-order of the "expected" and "actual" values. Our assertions are very readable as well: they read very close to plain 
-English, making it easier for non-technical people to read test code.
+FEST assertions are incredibly easy to write: just type **```assertThat```** followed the actual value and a dot,
+and any Java  IDE will show you all the assertions available for the type of the given object to verify. No more
+confusion about the order of the "expected" and "actual" values. Our assertions are very readable as well:
+they read very close to plain English, making it easier for non-technical people to read test code.
 
 ### Fest is documented
 
@@ -20,6 +24,6 @@ For more details please visit :
 
 ### Thanks
 
-Thanks to Cloudbees for their FOSS program that allows Fest to have a **[Jenkins CI server](https://fest.ci.cloudbees.com/#)** !
+Thanks to Cloudbees for their FOSS program that allows Fest to have a **[Jenkins CI server](https://fest.ci.cloudbees.com/#)**!
 
 ![cloudbees](/alexruiz/fest-assert-2.x/raw/master/src/site/resources/images/built-on-Dev@Cloud-Cloudbees.png)
