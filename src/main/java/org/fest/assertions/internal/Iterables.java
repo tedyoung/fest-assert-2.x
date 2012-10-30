@@ -1,15 +1,15 @@
 /*
  * Created on Sep 17, 2010
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
- * 
+ *
  * Copyright @2010-2011 the original author or authors.
  */
 package org.fest.assertions.internal;
@@ -51,21 +51,19 @@ import static org.fest.assertions.internal.CommonErrors.arrayOfValuesToLookForIs
 import static org.fest.util.Iterables.isNullOrEmpty;
 import static org.fest.util.Iterables.sizeOf;
 import static org.fest.util.Lists.newArrayList;
-
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-
 import org.fest.assertions.core.AssertionInfo;
 import org.fest.assertions.core.Condition;
 import org.fest.util.VisibleForTesting;
 
 /**
  * Reusable assertions for <code>{@link Iterable}</code>s.
- * 
+ *
  * @author Alex Ruiz
  * @author Yvonne Wang
  * @author Maciej Jaskowski
@@ -78,7 +76,7 @@ public class Iterables {
 
   /**
    * Returns the singleton instance of this class based on {@link StandardComparisonStrategy}.
-   * 
+   *
    * @return the singleton instance of this class based on {@link StandardComparisonStrategy}.
    */
   public static Iterables instance() {
@@ -112,10 +110,10 @@ public class Iterables {
 
   /**
    * Asserts that the given <code>{@link Iterable}</code> is {@code null} or empty.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
-   * @throws AssertionError if the given {@code Iterable} is not {@code null} *and* contains one or more elements.
+   * @throws AssertionError if the given {@code Iterable} is not {@code null} <strong>and</strong> contains one or more elements.
    */
   public void assertNullOrEmpty(AssertionInfo info, Iterable<?> actual) {
     if (actual == null || isNullOrEmpty(actual)) {
@@ -126,7 +124,7 @@ public class Iterables {
 
   /**
    * Asserts that the given {@code Iterable} is empty.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @throws AssertionError if the given {@code Iterable} is {@code null}.
@@ -142,7 +140,7 @@ public class Iterables {
 
   /**
    * Asserts that the given {@code Iterable} is not empty.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @throws AssertionError if the given {@code Iterable} is {@code null}.
@@ -158,7 +156,7 @@ public class Iterables {
 
   /**
    * Asserts that the number of elements in the given {@code Iterable} is equal to the expected one.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param expectedSize the expected size of {@code actual}.
@@ -176,7 +174,7 @@ public class Iterables {
 
   /**
    * Assert that the actual {@code Iterable} has the same size as the other array.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param other the given array to compare.
@@ -199,7 +197,7 @@ public class Iterables {
 
   /**
    * Assert that the actual {@code Iterable} has the same size as the other {@code Iterable}.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param other the given {@code Iterable}.
@@ -209,7 +207,7 @@ public class Iterables {
    */
   public void assertHasSameSizeAs(AssertionInfo info, Iterable<?> actual, Iterable<?> other) {
     assertNotNull(info, actual);
-    checkNotNull(info, other);
+    checkNotNull(other);
     int sizeOfActual = sizeOf(actual);
     int sizeOfOther = sizeOf(other);
     if (sizeOfActual == sizeOfOther) {
@@ -220,7 +218,7 @@ public class Iterables {
 
   /**
    * Asserts that the given {@code Iterable} contains the given values, in any order.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param values the values that are expected to be in the given {@code Iterable}.
@@ -260,7 +258,7 @@ public class Iterables {
 
   /**
    * Asserts that the given {@code Iterable} contains only the given values and nothing else, in any order.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param values the values that are expected to be in the given {@code Iterable}.
@@ -295,7 +293,7 @@ public class Iterables {
 
   /**
    * build a Set with that avoid duplicates <b>according to given comparison strategy</b>
-   * 
+   *
    * @param elements to feed the Set we want to build
    * @return a Set without duplicates <b>according to given comparison strategy</b>
    */
@@ -315,7 +313,7 @@ public class Iterables {
 
   /**
    * build a Set with that avoid duplicates <b>according to given comparison strategy</b>
-   * 
+   *
    * @param iterable to feed the Set we want to build
    * @return a Set without duplicates <b>according to given comparison strategy</b>
    */
@@ -336,7 +334,7 @@ public class Iterables {
   /**
    * Verifies that the given <code>{@link Iterable}</code> contains the given sequence of objects, without any other
    * objects between them.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param sequence the sequence of objects to look for.
@@ -361,7 +359,7 @@ public class Iterables {
   /**
    * Verifies that the actual <code>Iterable</code> is a subset of values <code>Iterable</code>. <br/>
    * Both actual and given iterable are treated as sets, therefore duplicates on either of them are ignored.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the actual {@code Iterable}.
    * @param values the {@code Iterable} that should contain all actual elements.
@@ -371,7 +369,7 @@ public class Iterables {
    */
   public void assertIsSubsetOf(AssertionInfo info, Iterable<?> actual, Iterable<?> values) {
     assertNotNull(info, actual);
-    checkNotNull(info, values);
+    checkNotNull(values);
     List<Object> extra = newArrayList();
     for (Object actualElement : actual) {
       if (!iterableContains(values, actualElement)) {
@@ -383,7 +381,7 @@ public class Iterables {
     }
   }
 
-  private static void checkNotNull(AssertionInfo info, Iterable<?> set) {
+  private static void checkNotNull(Iterable<?> set) {
     if (set == null) {
       throw iterableToLookForIsNull();
     }
@@ -395,11 +393,11 @@ public class Iterables {
 
   /**
    * Return true if actualAsList contains exactly the given sequence at given starting index, false otherwise.
-   * 
-   * @param actualAsList the list to look sequance in
+   *
+   * @param actualAsList the list to look sequence in
    * @param sequence the sequence to look for
-   * @param startingIndex the index of actual list at which we start looking for sequence.
-   * @return
+   * @param startingIndex the index of actual list at which we start looking for the sequence.
+   * @return true if actualAsList contains exactly the given sequence starting at the given index.
    */
   private boolean containsSequenceAtGivenIndex(List<?> actualAsList, Object[] sequence, int startingIndex) {
     // check that, starting from given index, actualAsList has enough remaining elements to contain sequence
@@ -427,14 +425,14 @@ public class Iterables {
 
   /**
    * Asserts that the given {@code Iterable} does not contain the given values.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param values the values that are expected not to be in the given {@code Iterable}.
    * @throws NullPointerException if the array of values is {@code null}.
    * @throws IllegalArgumentException if the array of values is empty.
    * @throws AssertionError if the given {@code Iterable} is {@code null}.
-   * @throws AssertionError if the given {@code Iterable} contains any of given values.
+   * @throws AssertionError if the given {@code Iterable} contains any of the given values.
    */
   public void assertDoesNotContain(AssertionInfo info, Iterable<?> actual, Object[] values) {
     checkIsNotNullAndNotEmpty(values);
@@ -453,7 +451,7 @@ public class Iterables {
 
   /**
    * Asserts that the given {@code Iterable} does not have duplicate values.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @throws NullPointerException if the array of values is {@code null}.
@@ -474,7 +472,7 @@ public class Iterables {
    * Verifies that the given {@code Iterable} starts with the given sequence of objects, without any other objects
    * between them. Similar to <code>{@link #assertContainsSequence(AssertionInfo, Iterable, Object[])}</code>, but it
    * also verifies that the first element in the sequence is also the first element of the given {@code Iterable}.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param sequence the sequence of objects to look for.
@@ -510,7 +508,7 @@ public class Iterables {
    * Verifies that the given {@code Iterable} ends with the given sequence of objects, without any other objects between
    * them. Similar to <code>{@link #assertContainsSequence(AssertionInfo, Iterable, Object[])}</code>, but it also
    * verifies that the last element in the sequence is also the last element of the given {@code Iterable}.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param sequence the sequence of objects to look for.
@@ -542,7 +540,7 @@ public class Iterables {
 
   /**
    * Asserts that the given {@code Iterable} contains at least a null element.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @throws AssertionError if the given {@code Iterable} is {@code null}.
@@ -557,7 +555,7 @@ public class Iterables {
 
   /**
    * Asserts that the given {@code Iterable} does not contain null elements.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @throws AssertionError if the given {@code Iterable} is {@code null}.
@@ -572,7 +570,7 @@ public class Iterables {
 
   /**
    * Assert that each element of given {@code Iterable} satisfies the given condition.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param condition the given {@code Condition}.
@@ -596,7 +594,7 @@ public class Iterables {
 
   /**
    * Assert that each element of given {@code Iterable} not satisfies the given condition.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param condition the given {@code Condition}.
@@ -620,7 +618,7 @@ public class Iterables {
 
   /**
    * Assert that each element of given {@code Iterable} satisfies the given condition.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param condition the given {@code Condition}.
@@ -644,7 +642,7 @@ public class Iterables {
 
   /**
    * Assert that each element of given {@code Iterable} not satisfies the given condition.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param condition the given {@code Condition}.
@@ -669,7 +667,7 @@ public class Iterables {
   /**
    * Assert that there is <b>at least</b> <i>n</i> elements in the actual {@code Iterable} satisfying the given
    * condition.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param n the minimum number of times the condition should be verified.
@@ -696,7 +694,7 @@ public class Iterables {
   /**
    * Assert that there is <b>at least</b> <i>n</i> elements in the actual {@code Iterable} <b>not</b> satisfying the
    * given condition.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param n the number of times the condition should not be verified at least.
@@ -723,7 +721,7 @@ public class Iterables {
   /**
    * Assert that there is <b>at most</b> <i>n</i> elements in the actual {@code Iterable} satisfying the given
    * condition.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param n the number of times the condition should be at most verified.
@@ -750,7 +748,7 @@ public class Iterables {
   /**
    * Verifies that there is <b>at most</b> <i>n</i> elements in the actual {@code Iterable} <b>not</b> satisfying the
    * given condition.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param n the number of times the condition should not be verified at most.
@@ -777,7 +775,7 @@ public class Iterables {
   /**
    * Verifies that there is <b>exactly</b> <i>n</i> elements in the actual {@code Iterable} satisfying the given
    * condition.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param n the exact number of times the condition should be verified.
@@ -804,7 +802,7 @@ public class Iterables {
   /**
    * Verifies that there is <b>exactly</b> <i>n</i> elements in the actual {@code Iterable} <b>not</b> satisfying the
    * given condition.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param n the exact number of times the condition should not be verified.
@@ -944,7 +942,7 @@ public class Iterables {
 
   /**
    * Asserts that the given {@code Iterable} contains all the elements of the other {@code Iterable}, in any order.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param other the other {@code Iterable}.
@@ -973,7 +971,7 @@ public class Iterables {
 
   /**
    * Asserts that the given {@code Iterable} contains exactly the given values and nothing else, <b>in order</b>.
-   * 
+   *
    * @param info contains information about the assertion.
    * @param actual the given {@code Iterable}.
    * @param values the values that are expected to be in the given {@code Iterable} in order.
@@ -1039,12 +1037,8 @@ public class Iterables {
     return satisfiesCondition;
   }
 
-  static public NullPointerException iterableToLookForIsNull() {
+  public static NullPointerException iterableToLookForIsNull() {
     return new NullPointerException("The iterable to look for should not be null");
-  }
-
-  static public IllegalArgumentException iterableToLookForIsEmpty() {
-    return new IllegalArgumentException("The iterable to look for should not be empty");
   }
 
 }
